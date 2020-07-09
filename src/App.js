@@ -32,7 +32,7 @@ export default class App extends React.Component {
       const formatted = keys.map(key => `${key}=${JSON.stringify(json[key])}`).join("&");
       const showLineNumbers = this.state.checked ? "&showLineNumbers=true" : ""
       const theme = this.state.theme ? `&theme=${this.state.theme}` : ""
-      window.open(`http://localhost:8080/json?${formatted}${showLineNumbers}${theme}`, "_blank");
+      window.open(`/json?${formatted}${showLineNumbers}${theme}`, "_blank");
     } catch (error) {
       alert('invalid json', error);
     }
