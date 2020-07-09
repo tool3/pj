@@ -1,4 +1,4 @@
-![](./server/public/pj.png)  
+![](./public/pj.png)  
 make pretty json using prismjs and query paramters
 
 # description
