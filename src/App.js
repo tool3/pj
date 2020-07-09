@@ -1,26 +1,92 @@
 import React from 'react';
-import logo from './logo.svg';
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-json';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const code = `{ 
+  "hello": "world",
+  "books": ["cool", "stuff"],
+  "objects": {
+    "name": {
+      "nested": true,
+      "origin": null,
+      "next": 22 
+    }
+  }
 }
+`;
 
-export default App;
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { code, checked: false, theme: 'okaidia' };
+    this.setChecked = this.setChecked.bind(this);
+    this.setTheme = this.setTheme.bind(this);
+  }
+
+  parseJson() {
+    try {
+      const json = JSON.parse(this.state.code);
+      const keys = Object.keys(json);
+      const formatted = keys.map(key => `${key}=${JSON.stringify(json[key])}`).join("&");
+      const showLineNumbers = this.state.checked ? "&showLineNumbers=true" : ""
+      const theme = this.state.theme ? `&theme=${this.state.theme}` : ""
+      window.open(`http://localhost:8080/json?${formatted}${showLineNumbers}${theme}`, "_blank");
+    } catch (error) {
+      alert('invalid json', error);
+    }
+  }
+
+  setChecked() {
+    this.setState({ checked: !this.state.checked });
+  }
+
+  setTheme(e) {
+    console.log(e.target.value);
+    this.setState({ theme: e.target.value });
+  }
+  render() {
+    return (
+      <div>
+        <Editor
+          tabSize={2}
+          insertSpaces={true}
+          autoCorrect={"true"}
+          autoFocus={true}
+          className="editor"
+          preClassName="language-json"
+          value={this.state.code}
+          onValueChange={code => {
+            this.setState({ code });
+          }}
+          highlight={code => highlight(code, languages.json)}
+          padding={10}
+          style={{
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 20,
+          }}
+        />
+        <div className="preview_options">
+          <div className="checkbox">
+            <input style={{ backgroundColor: "#5655ff" }} className="box" type="checkbox" checked={this.state.checked} onChange={this.setChecked} />
+            <span width="5px" /> show line numbers
+        </div>
+          <div className="theme">
+            <label className="theme_select--label" htmlFor="theme_select">theme</label>
+            <select name="themes" id="theme_select" onChange={this.setTheme}>
+              <option value="coy">coy</option>
+              <option value="okaidia">okaidia</option>
+              <option value="funky">funky</option>
+              <option value="solarizedlight">solarizedlight</option>
+              <option value="tomorrow">tomorrow</option>
+              <option value="twilight">twilight</option>
+            </select>
+          </div>
+        </div>
+
+        <button className="button" onClick={() => this.parseJson()} rel="noopener noreferrer" target="_blank">Try It</button>
+      </div>
+    );
+  }
+}

@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](./server/public/pj.png)  
+make pretty json using prismjs and query paramters
 
-## Available Scripts
+# description
 
-In the project directory, you can run:
+PJ's single API route allows to create a single HTML page with prismjs already included, making it perfect for `iframe`s and quickly embedding highlighted code blocks whether it's on blogs, portfolio sites, or anything that can render html.
 
-### `yarn start`
+# usage
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+use the `/json` path with query parameters to control the content of the returned document.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# features
 
-### `yarn test`
+## all types supported
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`pj` supports all the json standard types: `string`, `number`, `boolean`, `null`, `objects` and `arrays`.  
+you can even have nested types ! (for example: `["item1", "item2", {"nested": true}]`)
 
-### `yarn build`
+## show line numbers
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+adding `showLineNumbers=true` will show line numbers on the returned highlighted code block.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## themes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+adding `theme=<theme_name>` will use that theme to render the json.  
+available themes are the standard prismjs themes, which are:
 
-### `yarn eject`
+- `coy`
+- `dark`
+- `funky`
+- `okaidia`
+- `solarizedlight`
+- `tomorrow`
+- `twilight`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+note that there is no need to add the `prism-` prefix or any `.css` `.min.css` to the theme name as it is automatically added.
