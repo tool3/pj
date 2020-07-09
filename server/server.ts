@@ -11,7 +11,12 @@ app.use('/', express.static(join(__dirname, dev ? '../public' : '../build')));
 app.set('json spaces', 2);
 
 app.get('/json', async (req: Request, res: Response) => {
-  const html: string = await readHtml(req.query);
+  const html: string = await readHtml(req.query, 'json');
+  res.send(html);
+});
+
+app.get('/js', async (req: Request, res: Response) => {
+  const html: string = await readHtml(req.query, 'javascript');
   res.send(html);
 });
 

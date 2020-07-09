@@ -2,6 +2,8 @@ import React from 'react';
 import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
 import './App.css';
 
 const code = `{ 
@@ -54,7 +56,6 @@ export default class App extends React.Component {
           insertSpaces={true}
           autoCorrect={"true"}
           autoFocus={true}
-          preClassName="language-json"
           value={this.state.code}
           onValueChange={code => {
             this.setState({ code });
