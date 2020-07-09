@@ -88,3 +88,7 @@ pre {
 div.site-footer-inner {
   padding: 0 !important ;
 }
+
+.github-fork-ribbon:before {
+  background-color: #5655ff !important;
+}

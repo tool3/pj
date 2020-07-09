@@ -3,6 +3,11 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+    
+.github-fork-ribbon:before {
+    background-color: #5655ff !important;
+  }
+
 body {
   margin: 0;
 }
