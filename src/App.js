@@ -75,9 +75,9 @@ export default class App extends React.Component {
           <div className="theme">
             <label className="theme_select--label" htmlFor="theme_select">theme</label>
             <select name="themes" id="theme_select" onChange={this.setTheme}>
+              <option value="okaidia">okaidia</option>
               <option value="dark">dark</option>
               <option value="coy">coy</option>
-              <option value="okaidia">okaidia</option>
               <option value="funky">funky</option>
               <option value="solarizedlight">solarizedlight</option>
               <option value="tomorrow">tomorrow</option>
