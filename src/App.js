@@ -48,13 +48,12 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="editor">
         <Editor
           tabSize={2}
           insertSpaces={true}
           autoCorrect={"true"}
           autoFocus={true}
-          className="editor"
           preClassName="language-json"
           value={this.state.code}
           onValueChange={code => {

@@ -3,10 +3,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-    
+
 .github-fork-ribbon:before {
-    background-color: #5655ff !important;
-  }
+  background-color: #5655ff !important;
+}
 
 body {
   margin: 0;
@@ -411,20 +411,7 @@ h6,
     letter-spacing: -0.1px;
   }
 }
-.text-light h1,
-.text-light h2,
-.text-light h3,
-.text-light h4,
-.text-light h5,
-.text-light h6,
-.text-light .h1,
-.text-light .h2,
-.text-light .h3,
-.text-light .h4,
-.text-light .h5,
-.text-light .h6 {
-  color: !important;
-}
+
 .text-sm {
   font-size: 18px;
   line-height: 28px;
@@ -1008,6 +995,26 @@ label {
 .field-grouped > .control:not(:last-child) {
   margin-bottom: 8px;
 }
+
+@media only screen and (max-width: 600px) {
+    #root {
+        width: 18em;
+        padding-bottom: 2em;
+    }
+  main {
+    flex-direction: column;
+  }
+  .github-fork-ribbon:before {
+    display: none !important;
+  }
+  .github-fork-ribbon:after {
+    display: none !important;
+  }
+  .github-fork-ribbon {
+    display: none !important;
+  }
+}
+
 @media (min-width: 641px) {
   .field-grouped {
     display: flex;

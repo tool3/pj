@@ -3,13 +3,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-.editor {
-  width: 25em;
-  height: 25em;
-  overflow: scroll !important;
-}
-
 .button {
   background: "#242830";
   width: 10em;
