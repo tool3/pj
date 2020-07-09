@@ -20,7 +20,7 @@ you can even have nested types ! (for example: `["item1", "item2", {"nested": tr
 
 adding `showLineNumbers=true` will show line numbers on the returned highlighted code block.
 
-## themes
+## theme
 
 adding `theme=<theme_name>` will use that theme to render the json.  
 available themes are the standard prismjs themes, which are:

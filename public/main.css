@@ -84,3 +84,7 @@ pre {
   padding: none !important;
   margin: 0 !important;
 }
+
+div.site-footer-inner {
+  padding: 0 !important ;
+}
