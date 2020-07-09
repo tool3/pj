@@ -997,10 +997,13 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
-    #root {
-        width: 18em;
-        padding-bottom: 2em;
-    }
+  .button {
+    width: 100% !important;
+  }
+  #root {
+    width: 18em;
+    padding-bottom: 2em;
+  }
   main {
     flex-direction: column;
   }
