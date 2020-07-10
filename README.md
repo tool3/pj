@@ -3,7 +3,7 @@ make pretty json using prismjs and query paramters
 
 # description
 
-PJ's single API route allows to create a single HTML page with prismjs already included, making it perfect for `iframe`s and quickly embedding highlighted JSON it's on READMEs, blogs, portfolio sites, or anything that can render html.
+PJ's single API route allows to create a single HTML page with prismjs already included, making it perfect for `iframe`s and quickly embedding highlighted JSON it's whether on READMEs, blogs, portfolio sites, or anything that can render html.
 
 # usage
 
