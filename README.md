@@ -3,7 +3,7 @@ make pretty json using prismjs and query paramters
 
 # description
 
-PJ's single API route allows to create a single HTML page with prismjs already included, making it perfect for `iframe`s and quickly embedding highlighted code blocks whether it's on blogs, portfolio sites, or anything that can render html.
+PJ's single API route allows to create a single HTML page with prismjs already included, making it perfect for `iframe`s and quickly embedding highlighted JSON it's on READMEs, blogs, portfolio sites, or anything that can render html.
 
 # usage
 
@@ -11,16 +11,15 @@ use the `/json` path with query parameters to control the content of the returne
 
 # `GET /json?key=value`
 
-for example, `<iframe src="https://p-j.herokuapp.com/json?hello=world" />`:
+for example, `https://p-j.herokuapp.com/json?hello=world&books=["cool","stuff"]&objects={"name":{"nested":true,"origin":null,"next":22}}`  
+will result in
 
-<iframe src="https://p-j.herokuapp.com/json?hello=world" title="pj"></iframe>
+![](./public/example.png)
 
 ## all types supported
 
 `pj` supports all the json standard types: `string`, `number`, `boolean`, `null`, `objects` and `arrays`.  
 you can even have nested types ! (for example: `["item1", "item2", {"nested": true}]`)
-
-# options
 
 ## show line numbers
 
