@@ -9,12 +9,18 @@ PJ's single API route allows to create a single HTML page with prismjs already i
 
 use the `/json` path with query parameters to control the content of the returned document.
 
-# features
+# `GET /json?key=value`
+
+for example, `<iframe src="https://p-j.herokuapp.com/json?hello=world" />`:
+
+<iframe src="https://p-j.herokuapp.com/json?hello=world" title="pj"></iframe>
 
 ## all types supported
 
 `pj` supports all the json standard types: `string`, `number`, `boolean`, `null`, `objects` and `arrays`.  
 you can even have nested types ! (for example: `["item1", "item2", {"nested": true}]`)
+
+# options
 
 ## show line numbers
 

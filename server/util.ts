@@ -84,7 +84,7 @@ export const readHtml = async (query: any, language: string): Promise<string> =>
     const data: Buffer = await read(path.join(__dirname, '../public/template.html'));
     const html: string = data.toString();
 
-    let theme: string = 'twilight';
+    let theme: string = 'okaidia';
     let className: string = `language-${language}`;
     if (query.theme) {
         theme = query.theme;
