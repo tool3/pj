@@ -16,9 +16,9 @@
   },
   "scripts": {
     "start": "node serverJS/server.js",
-    "dev": "concurrently NODE_END=dev 'react-scripts start' 'ts-node server/server.ts'",
+    "dev": "concurrently NODE_ENV=dev 'react-scripts start' 'ts-node server/server.ts'",
     "build": "react-scripts build && tsc",
-    "prod": "NODE_END=PROD npm run build && node serverJS/server.js",
+    "prod": "NODE_ENV=PROD npm run build && node serverJS/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

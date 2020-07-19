@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 app.use('/', express.static(join(__dirname, dev ? '../public' : '../build')));
 app.set('json spaces', 2);
 
+app.get('/ping', async (req: Request, res: Response) => {
+  res.send('pong');
+});
+
 app.get('/json', async (req: Request, res: Response) => {
   const html: string = await readHtml(req.query, 'json');
   res.send(html);
